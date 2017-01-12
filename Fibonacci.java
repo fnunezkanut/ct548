@@ -27,18 +27,7 @@ public class Fibonacci {
             result = 1;
         } else if (n <= 46) { //n=2 to n=46
 
-            int secondPreviousResult = 0;
-            int firstPreviousResult = 1;
-
-            ///not using recursion so we will have to use a loop
-            for (int i = 2; i <= n; i++) {
-
-                result = firstPreviousResult + secondPreviousResult;
-
-                //update first and second previous results for the next loop iteration
-                secondPreviousResult = firstPreviousResult;
-                firstPreviousResult = result;
-            }
+            result = withRecursion(n - 1) + withRecursion(n - 2);
         } else {
 
             throw new IllegalArgumentException("Ooops this method can only accept a max n = 46");
